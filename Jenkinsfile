@@ -1,11 +1,12 @@
 pipeline{
     agent any
-    stages{
-        stage('checkout'){
-            steps{
-                git ''
+    stages {
+        stage('git checkout') {
+            steps {
+                git branch: 'master', url: 'https://github.com/ygminds73/Ekart.git'
             }
         }
+        
         stage('terraform init'){
             steps{
                 dir('terraform'){
